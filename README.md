@@ -1,6 +1,6 @@
 # Kotlin Unit Conversion Library
 
-[![](https://jitpack.io/v/jksalcedo/unitconverter-kt.svg)](https://jitpack.io/#jksalcedo/unitconverter-kt) [![Kotlin](https://img.shields.io/badge/Kotlin-2.1.21-blue.svg?logo=kotlin)](https://kotlinlang.org/) 
+[![](https://jitpack.io/v/jksalcedo/unitconverter-kt.svg)](https://jitpack.io/#jksalcedo/unitconverter-kt)  [![Kotlin](https://img.shields.io/badge/Kotlin-2.1.21-blue.svg?logo=kotlin)](https://kotlinlang.org/) 
 
 A simple yet robust Kotlin library to convert numerical values between different units. Supports multiple measurement categories including Length, Weight, and Temperature—with special handling for temperature’s non-linear conversions.
 
