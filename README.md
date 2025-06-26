@@ -16,31 +16,25 @@ A simple yet robust Kotlin library to convert numerical values between different
 
 ---
 
-## Supported Categories & Units
-
-### LENGTH
-
-- `meters` (base)
-- `feet`
-- `yards`
-- `inches`
-
-### WEIGHT
-
-- `kilograms` (base)
-- `pounds`
-- `grams`
-- `ounces`
-
-### TEMPERATURE
-
-Affine conversions (not just multiplicative):
-
-- `celsius`
-- `fahrenheit`
-- `kelvin`
-
----
+## API
+| Function / Class                      | Description                                                                 | Parameters                                      | Returns                 |
+|---------------------------------------|-----------------------------------------------------------------------------|-------------------------------------------------|-------------------------|
+| **`UnitCategory`**                    | Enum representing supported unit conversion categories and their conversion factors. | —                                               | —                       |
+| - `LENGTH`                            | Defines conversion factors for length units (meters, feet, yards, inches).  | —                                               | —                       |
+| - `WEIGHT`                            | Defines conversion factors for weight units (kilograms, pounds, grams, ounces). | —                                               | —                       |
+| - `TEMPERATURE`                       | Defines conversion factors for temperature units (celsius, fahrenheit, kelvin). | —                                               | —                       |
+| - `getFactor(fromUnit: String, toUnit: String): Double?` | Retrieves the conversion factor between two units within the category. | `fromUnit: String`, `toUnit: String`            | `Double?`               |
+| **`UnitValue`**                       | Data class to hold a value with its unit for fluent conversions.            | `value: Double`, `unit: String`, `category: UnitCategory` | —                   |
+| - `convertTo(toUnit: String): ConversionResult` | Converts the value to the specified unit. | `toUnit: String`                                | `ConversionResult`      |
+| **`ConversionResult`**                | Data class to hold conversion results.                                     | `value: Double`, `success: Boolean`, `message: String? = null` | —                   |
+| **`convert(value: Double, fromUnit: String, toUnit: String, category: UnitCategory): ConversionResult`** | Converts a value from one unit to another within a category. | `value: Double`, `fromUnit: String`, `toUnit: String`, `category: UnitCategory` | `ConversionResult` |
+| **`toUnit(unit: String, category: UnitCategory): UnitValue`** | Extension function to start a fluent unit conversion from `Double`. | `unit: String`, `category: UnitCategory`         | `UnitValue`             |
+| **`Double.meters`**                   | Extension property to initiate a length conversion from meters.             | —                                               | `UnitValue`             |
+| **`Double.feet`**                     | Extension property to initiate a length conversion from feet.               | —                                               | `UnitValue`             |
+| **`Double.kilograms`**                | Extension property to initiate a weight conversion from kilograms.          | —                                               | `UnitValue`             |
+| **`Double.pounds`**                   | Extension property to initiate a weight conversion from pounds.             | —                                               | `UnitValue`             |
+| **`Double.celsius`**                  | Extension property to initiate a temperature conversion from celsius.       | —                                               | `UnitValue`             |
+| **`Double.fahrenheit`**               | Extension property to initiate a temperature conversion from fahrenheit.    | —                                               | `UnitValue`             |
 
 ## Installation
 
@@ -159,8 +153,11 @@ fun main() {
 
 ## Contributing
 
-Contributions are welcome! Open issues for bugs or feature requests, or submit pull requests with improvements.
+Contributions are welcome! To contribute:
 
-## License
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Make your changes and add tests if needed.
+4. Open a pull request with a clear description of your changes.
 
-This project is licensed under the MIT License. See the **LICENSE** file for details.
+Please follow the existing code style and conventions.
